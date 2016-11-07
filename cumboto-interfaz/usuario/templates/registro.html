@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="es">
+{% include 'base.head.template.html' %}
+{% block content %}
+  <body class="login" style="background: url({% static 'img/fondo_cumboto4.png' %}) repeat-y fixed center center; -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            text-align: center;
+            height: 100%;
+            width: 100%;
+            margin: 0px;
+            background-position: center;">
+    <div>
+      <a class="hiddenanchor" id="signup"></a>
+      <a class="hiddenanchor" id="signin"></a>
+
+      <div class="login_wrapper">
+        <div class="animate form login_form">
+          <section class="login_content">
+            <form  class="form-horizontal form-label-left"  enctype="multipart/form-data" name="LoginForm" action="" method="post">
+               {% csrf_token %}
+                    <h1>Crear Cuenta</h2>
+               <div class="item form-group">
+                <div class="item form-group">
+                  <input id="d_first_name" name="first_name" type="text" class="form-control col-md-5 col-xs-16" placeholder="Nombres"  autofocus>
+                </div>
+                <div>
+                <input id="id_last_name" name="last_name" type="text" class="form-control col-md-5 col-xs-16" placeholder="Apellidos" autofocus>
+                </div>
+                <div>
+                <input id="id_email" name="email" type="email" class="form-control col-md-5 col-xs-16" placeholder="Dirección de correo" required="required" autofocus>
+                </div>
+                 <div>
+                <input id="id_username" name="username" type="text" class="form-control col-md-5 col-xs-16" placeholder="Nombre de usuario" required="required" autofocus>
+                </div>
+                <div>
+                 <input id="id_password1" name="password1" type="password" class="form-control col-md-5 col-xs-16" placeholder="Contraseña" required="required" autofocus/>
+                </div> 
+                 <div>
+                 <input id="id_password1" name="password2" type="password" class="form-control col-md-5 col-xs-16" placeholder="Vuelva a ingresar la contraseña" required="required" autofocus/>
+                </div> 
+                </div>
+                <div class="item form-group">
+                   <input class="btn btn-default submit" type="submit" value="Registrar" style="margin-left: 135px">  
+                </div>
+
+                <div class="clearfix"></div>
+                  <br />
+
+                <div>
+                  <h1><img src="{% static 'img/logo_30.png' %}">  Cumboto</h1>
+                  <p>©2016 Copyleft CENDITEL</p>
+                </div>             
+            </form>
+          </section>
+        </div>
+      </div>
+    </div>
+  </body>
+{% endblock %}
+{% include 'base.footer.template.html' %}
+</html>

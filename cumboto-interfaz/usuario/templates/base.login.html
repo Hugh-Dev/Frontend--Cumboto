@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="es">
+{% include 'base.head.template.html' %}
+{% block content %}
+  <body class="login" style="background: url({% static 'img/fondo_cumboto4.png' %}) repeat-y fixed center center; -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            text-align: center;
+            height: 100%;
+            width: 100%;
+            margin: 0px;
+            background-position: center;">
+    <div>
+      <a class="hiddenanchor" id="signup"></a>
+      <a class="hiddenanchor" id="signin"></a>
+
+      <div class="login_wrapper">
+        <div class="animate form login_form">
+          <section class="login_content">
+            <form  class="form-horizontal form-label-left" name="LoginForm" action="" method="post" >
+               {% csrf_token %}
+
+              <h1>Iniciar Sesion</h1>
+                  {% if message %}
+                     {{messaje}}
+                  {%  endif %}
+              <div class="item form-group">
+
+               <input id="id_username" name="username" type="text" class="form-control col-md-5 col-xs-16" placeholder="Usuario" required="required" autofocus>
+               </div>
+              
+              <div class="item form-group" >
+                <input id="id_password" name="password" type="password" class="form-control col-md-5 col-xs-16" placeholder="Contraseña" required="required" autofocus/>
+              </div> 
+               <div aling="center">
+                <input class="btn btn-default submit" type="submit" style="margin-left: 115px" value="Autenticarse" />
+              </div>
+               <div class="clearfix"></div>
+
+              <div class="separator">
+                <p class="change_link">
+                  <a href='{% url "usuario:registro" %}' class="to_register">Crear cuenta</a>
+                </p>
+
+                <div class="clearfix"></div>
+                <br />
+
+               <div>
+                  <h1><img src="{% static 'img/logo_30.png' %}"> Cumboto</h1>
+                  <p>©2016 Copyleft CENDITEL</p>
+                </div>
+              </div>
+            </form>
+          </section>
+        </div>
+        </div>
+    </div>
+</body>
+{% endblock %}
+{% include 'base.footer.template.html' %}
+</html>

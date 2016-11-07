@@ -1,0 +1,62 @@
+Script iniciado (mié 02 nov 2016 09:41:08 VET
+)]0;cenditel@debian: ~/Documentos/#cumboto#/cumboto-interfaz/bibliotecacenditel@debian:~/Documentos/#cumboto#/cumboto-interfaz/biblioteca$ cd scripts/
+]0;cenditel@debian: ~/Documentos/#cumboto#/cumboto-interfaz/biblioteca/scriptscenditel@debian:~/Documentos/#cumboto#/cumboto-interfaz/biblioteca/scripts$ cd scripts/[6Pls -l[K[K[K[K[Kpython metadatos.py 
+[{'nombre': u'Ejemplo'}, {'id_organizacion': u'0x0000000A'}, {'id': u'0x0020'}, {'version': u'0:0.0-0+0:0~0-0'}, {'clase_inicial': u'main.ncl'}]
+{'nombre': u'Ejemplo'}
+{'id_organizacion': u'0x0000000A'}
+{'id': u'0x0020'}
+{'version': u'0:0.0-0+0:0~0-0'}
+{'clase_inicial': u'main.ncl'}
+]0;cenditel@debian: ~/Documentos/#cumboto#/cumboto-interfaz/biblioteca/scriptscenditel@debian:~/Documentos/#cumboto#/cumboto-interfaz/biblioteca/scripts$ cd ..
+]0;cenditel@debian: ~/Documentos/#cumboto#/cumboto-interfaz/bibliotecacenditel@debian:~/Documentos/#cumboto#/cumboto-interfaz/biblioteca$ ls [K[K[Kpython p[Klib[K[K[Kfilezip.py 
+0000000A0020.zip
+
+
+file name :  0000000A0020/aplicacion/relleno
+file name :  0000000A0020/metadatos.conf
+***************************************
+
+directorio :  /home/cenditel/Documentos/#cumboto#/cumboto-interfaz/biblioteca/extraccion/extraccion
+archivos en  /home/cenditel/Documentos/#cumboto#/cumboto-interfaz/biblioteca/extraccion/extraccion
+
+
+***************************************
+
+directorio :  /home/cenditel/Documentos/#cumboto#/cumboto-interfaz/biblioteca/extraccion/extraccion/0000000A0020
+archivos en  /home/cenditel/Documentos/#cumboto#/cumboto-interfaz/biblioteca/extraccion/extraccion/0000000A0020
+archivo :  metadatos.conf
+
+
+***************************************
+
+directorio :  /home/cenditel/Documentos/#cumboto#/cumboto-interfaz/biblioteca/extraccion/extraccion/0000000A0020/aplicacion
+archivos en  /home/cenditel/Documentos/#cumboto#/cumboto-interfaz/biblioteca/extraccion/extraccion/0000000A0020/aplicacion
+archivo :  relleno
+
+
+metadatos.conf
+['metadatos.conf']
+*************
+metadatos.conf encontrados =  1
+
+
+##########metadatos##############
+0 secciones:
+]0;cenditel@debian: ~/Documentos/#cumboto#/cumboto-interfaz/bibliotecacenditel@debian:~/Documentos/#cumboto#/cumboto-interfaz/biblioteca$ cd scripts/
+]0;cenditel@debian: ~/Documentos/#cumboto#/cumboto-interfaz/biblioteca/scriptscenditel@debian:~/Documentos/#cumboto#/cumboto-interfaz/biblioteca/scripts$ python metadatos.py 
+[{'nombre': u'Ejemplo'}, {'id_organizacion': u'0x0000000A'}, {'id': u'0x0020'}, {'version': u'0:0.0-0+0:0~0-0'}, {'clase_inicial': u'main.ncl'}]
+{'nombre': u'Ejemplo'}
+{'id_organizacion': u'0x0000000A'}
+{'id': u'0x0020'}
+{'version': u'0:0.0-0+0:0~0-0'}
+{'clase_inicial': u'main.ncl'}
+]0;cenditel@debian: ~/Documentos/#cumboto#/cumboto-interfaz/biblioteca/scriptscenditel@debian:~/Documentos/#cumboto#/cumboto-interfaz/biblioteca/scripts$ nano metadatos.py 
+[?1049h[1;52r(B[m[4l[?7h[?12l[?25h[?1h=[?1h=[?1h=[39;49m[39;49m(B[m[H[2J(B[0;7m  GNU nano 2.2.6                                            Fichero: metadatos.py                                                                                                 [3;1H(B[0;1m[31m# -*- coding: utf-8 -*-[5d###############################################################[6d#   ## ## #### #######  #    ###     #  ####### ####  #####   #  [7d#   # # # #       #    # #   #  #   # #    #    #  #  #       #[8d#   #   # ###     #   #   #  #   # #   #   #    #  #  #####   #[9d#   #   # #       #   #####  #  #  #####   #    #  #      #   #[10d#   #   # ####    #   #   #  ###   #   #   #    ####  #####   #[11d###############################################################[13d[36mimport[39m(B[m re, configparser[15dmetadata = (B[0;1m[32m'metadatos.conf'[18d[36mdef[34m leerDict[39m(B[m(diccionario, elemento):[19;9H(B[0;1m[36mfor[39m(B[m i, j (B[0;1m[36min[39m(B[m elemento.items():[20;17Hdiccionario = diccionario.replace(i, j)[21;9H(B[0;1m[36mreturn[39m(B[m diccionario[22d(B[0;1m[36mdef[34m limpieza[39m(B[m(l):[23;5Hv = True[24;5H(B[0;1m[36mwhile[39m(B[m v == True:[25;9H(B[0;1m[36mtry[39m(B[m:[26dc= l.index ('')[27;9H(B[0;1m[36mexcept[39m(B[m ValueError:[28;12Hc = -1[29;12Hv= False[30;9H(B[0;1m[36mif[39m(B[m c > 0:[31;12Hc = l.remove ('')[32d(B[0;1m[36mdef[34m parsearFile[39m(B[m(metadata):[33;9Hlibreria=[][34;9HparserFile = open(metadata, (B[0;1m[32m'r'[39m(B[m).read()[35;9Hp = parserFile.split((B[0;1m[32m'\n'[39m(B[m)[36;9HconfigP = configparser.RawConfigParser()[37;9Hparse = r"(B[0;1m[32m"+metadata+""[38;9H[39m(B[mconfigP.read(parse)[39;9Hlimpieza(p)[40;9H(B[0;1m[36mfor[39m(B[m parsemeta  (B[0;1m[36min[39m(B[m range (len(p)):[41;13H(B[0;1m[36mif[39m(B[m parsemeta == 0:[42;17Helementos = {(B[0;1m[32m'['[39m(B[m:'(B[0;1m[32m','[39m(B[m](B[0;1m[32m':''[39m(B[m}[43;17Hresult = leerDict(p[0], elementos)[44;13H(B[0;1m[36mif[39m(B[m parsemeta > 0:[45;17Hindicadores = {(B[0;1m[32m':'[39m(B[m:'(B[0;1m[32m','[39m(B[m=(B[0;1m[32m':''[39m(B[m}[46;17HdictParser = leerDict(p[parsemeta], indicadores)[47;17Hc= dictParser.split()[48;17He = configP.get(result, c[0])[49;17He = e.split()[50;80H(B[0;7m[ 57 líneas leídas ][51d^G(B[m Ver ayuda[51;30H(B[0;7m^O(B[m Guardar[51;59H(B[0;7m^R(B[m Leer Fich[51;88H(B[0;7m^Y(B[m Pág Ant[51;117H(B[0;7m^K(B[m CortarTxt[51;146H(B[0;7m^C(B[m Pos actual[52d(B[0;7m^X(B[m Salir[52;30H(B[0;7m^J(B[m Justificar[52;59H(B[0;7m^W(B[m Buscar[52;88H(B[0;7m^V(B[m Pág Sig[52;117H(B[0;7m^U(B[m PegarTxt[52;146H(B[0;7m^T(B[m Ortografía[3d[8d[9d[10d[11d[12d[13d[15d[20d[21d[27d[50d[K[32d[33d[39d[45d[3;50r[50;1H[24S[1;52r[26;17Hlibreria.append({c[0] : e[0]})[27;9H(B[0;1m[36mreturn[39m(B[m libreria[28dmd = parsearFile(metadata)[29d(B[0;1m[36mprint[39m(B[m(md)[30d(B[0;1m[36mfor[39m(B[m conf (B[0;1m[36min[39m(B[m md:[31;9H(B[0;1m[36mprint[39m(B[m (conf)[35d(B[0;1m[31m#print (parsearFile(metadata))[27d[39m(B[m[33d[A[A[A[A[1;167H(B[0;7mModificado[29d(B[0;1m[31m#print(md)#[39m(B[m[50d(B[0;7mNombre del fichero a escribir: metadatos.py                                                                                                                                       [51;30H(B[m[15X[51;45H(B[0;7mM-D(B[m Formato DOS           [51;88H (B[0;7mM-A(B[m Añadir[51;117H[16X[51;133H(B[0;7mM-B(B[m Respaldar fich[K[52;2H(B[0;7mC(B[m Cancelar[52;30H[15X[52;45H(B[0;7mM-M(B[m Formato Mac        [52;88H (B[0;7mM-P(B[m Anteponer[K[50;44H[1;167H[39;49m(B[0;7m          [50;78H(B[m[1K (B[0;7m[ 57 líneas escritas ](B[m[K[51;30H(B[0;7m^O(B[m Guardar[19X[51;59H(B[0;7m^R(B[m Leer Fich[51;88H(B[0;7m^Y(B[m Pág Ant [51;117H(B[0;7m^K(B[m CortarTxt[17X[51;146H(B[0;7m^C(B[m Pos actual[52;2H(B[0;7mX(B[m Salir   [52;30H(B[0;7m^J(B[m Justificar[16X[52;59H(B[0;7m^W(B[m Buscar[52;88H(B[0;7m^V(B[m Pág Sig    [52;117H(B[0;7m^U(B[m PegarTxt[52;146H(B[0;7m^T(B[m Ortografía[29;2H[51d[J[52;178H[52;1H[?1049l[?1l>]0;cenditel@debian: ~/Documentos/#cumboto#/cumboto-interfaz/biblioteca/scriptscenditel@debian:~/Documentos/#cumboto#/cumboto-interfaz/biblioteca/scripts$ nano metadatos.py [2@python[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+{'nombre': u'Ejemplo'}
+{'id_organizacion': u'0x0000000A'}
+{'id': u'0x0020'}
+{'version': u'0:0.0-0+0:0~0-0'}
+{'clase_inicial': u'main.ncl'}
+]0;cenditel@debian: ~/Documentos/#cumboto#/cumboto-interfaz/biblioteca/scriptscenditel@debian:~/Documentos/#cumboto#/cumboto-interfaz/biblioteca/scripts$ [H[2J]0;cenditel@debian: ~/Documentos/#cumboto#/cumboto-interfaz/biblioteca/scriptscenditel@debian:~/Documentos/#cumboto#/cumboto-interfaz/biblioteca/scripts$ python metadatos.py 
+{'nombre': u'Ejemplo'}
+{'id_organiza

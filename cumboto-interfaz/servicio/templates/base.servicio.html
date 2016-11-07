@@ -1,0 +1,64 @@
+{% extends 'base.template.html' %}
+{% load static from staticfiles %}
+{% block content %}
+<div class="page-title">
+    <div class="title_left">
+        <h3>Gestión de Transmisión de Aplicaciones Interactivas para la TDA</h3>
+    </div>
+</div>
+     <div class="x_panel">
+       <div class="x_content">
+        <div class="box-body">
+           <!--<div class="row">
+           <br>
+               <div class="col-md-4">
+                   <img class="img-reponsive" src="static/img/logo.png" align="left">  
+               </div>
+               <div class="col-md-8"></div>
+           </div>-->
+           <div class="row">
+               <div class="col-md-3"></div>
+               <div class="col-md-6"><br>
+               <h1 align="center">Configuración de Servicios</h1><hr><br>
+               <form action="" role="form" class="form form-horizontal validate-form" method="post" autocomplete="off">
+                    {% csrf_token %}
+                        <td>{{ form.servicio }}</td>
+                        <table id="servicios" class="table table-striped table-bordered" cellspacing="0" width="100%" style="text-align: center;">
+                            <thead>
+                            <tr>
+                                <th style="text-align: center">Ranura</th>
+                                <th style="text-align: center">Aplicación</th>
+                                <th style="text-align: center">Modalidad</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                {% block form_inputs %}
+                                <td>{{ form.ranura }}</td>
+                                <td>{{ form.codigo_app }}</td>
+                                <td>{{ form.modalidad }}</td>
+                                {% endblock %}
+                            </tr>
+                            </tbody>
+                        </table>
+                        <div class="form-group">
+                            {{ form.detener }}
+                        </div>
+                        <div class="form-group" align="right">
+                            <input type="submit" class="btn btn-default" value="Enviar">
+                        </div>
+                </form>
+                <br><br>
+              </div>
+          </div>
+
+            <br><br><br>
+            <br><br><br>
+            <br><br>
+
+        </div>
+      </div>
+    </div>
+{% endblock %}
+
+
